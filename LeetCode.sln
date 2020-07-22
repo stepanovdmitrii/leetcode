@@ -1,0 +1,30 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30309.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "LeetCode\LeetCode.csproj", "{DEB4FA89-0DB8-4354-BD10-68E10726380C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.UnitTests", "LeetCode.UnitTests\LeetCode.UnitTests.csproj", "{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Debug|x64.ActiveCfg = Debug|x64
+		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Debug|x64.Build.0 = Debug|x64
+		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Release|x64.ActiveCfg = Debug|x64
+		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Release|x64.Build.0 = Debug|x64
+		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Debug|x64.ActiveCfg = Debug|x64
+		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Debug|x64.Build.0 = Debug|x64
+		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Release|x64.ActiveCfg = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5EF0613D-A94A-41CB-A166-DF51F791F49A}
+	EndGlobalSection
+EndGlobal
