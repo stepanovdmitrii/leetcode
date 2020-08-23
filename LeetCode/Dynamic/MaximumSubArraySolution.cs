@@ -13,13 +13,13 @@ namespace LeetCode.Dynamic
             for(int index = 0; index < nums.Length; ++index)
             {
                 if (index != 0) {
-                    current = Math.Max(nums[index], current + nums[index]);
+                    current = System.Math.Max(nums[index], current + nums[index]);
                 }
                 else
                 {
                     current = nums[index];
                 }
-                result = Math.Max(result, current);
+                result = System.Math.Max(result, current);
             }
             return result;
         }

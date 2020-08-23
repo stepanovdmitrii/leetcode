@@ -24,7 +24,7 @@ namespace LeetCode.Design
             }
             else
             {
-                _min.Push(Math.Min(_min.Peek(), x));
+                _min.Push(System.Math.Min(_min.Peek(), x));
             }
         }
 
