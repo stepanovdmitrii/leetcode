@@ -45,7 +45,32 @@
 
         public ListNode GetIntersectionNode(ListNode headA, ListNode headB)
         {
+            if (headA == null || headB == null) return null;
+            if (ReferenceEquals(headA, headB)) return headA;
 
+            ListNode fromA = headA.next;
+            ListNode fromB = headB.next;
+            bool aSwitched = false;
+            bool bSwitched = false;
+
+            while (true)
+            {
+                if(fromA == null)
+                {
+                    if (aSwitched) return null;
+                    fromA = headB;
+                    aSwitched = true;
+                }
+                if(fromB == null)
+                {
+                    if (bSwitched) return null;
+                    fromB = headA;
+                    bSwitched = true;
+                }
+                if (ReferenceEquals(fromA, fromB)) return fromA;
+                fromA = fromA.next;
+                fromB = fromB.next;
+            }
         }
     }
 }
