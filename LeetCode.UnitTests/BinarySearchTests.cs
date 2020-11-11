@@ -23,5 +23,13 @@ namespace LeetCode.UnitTests
             Assert.AreEqual(1, solution.Search(new[] { 3, 1 }, 1));
         }
 
+        [Test]
+        public void IsPerfectSquareTests()
+        {
+            var solution = new ConclusionSolutions();
+            Assert.IsTrue(solution.IsPerfectSquare(16));
+            Assert.IsFalse(solution.IsPerfectSquare(14));
+            Assert.IsTrue(solution.IsPerfectSquare(9));
+        }
     }
 }
