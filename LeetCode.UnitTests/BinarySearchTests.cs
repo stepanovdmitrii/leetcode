@@ -31,5 +31,12 @@ namespace LeetCode.UnitTests
             Assert.IsFalse(solution.IsPerfectSquare(14));
             Assert.IsTrue(solution.IsPerfectSquare(9));
         }
+
+        [Test]
+        public void SmallestDistancePairTests()
+        {
+            var solution = new SmallestDistancePairSolution();
+            Assert.AreEqual(5, solution.SmallestDistancePair(new[] { 1, 6, 1 }, 3));
+        }
     }
 }

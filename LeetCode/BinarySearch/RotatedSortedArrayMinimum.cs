@@ -31,5 +31,44 @@ namespace LeetCode.BinarySearch
             }
             return left + 1;
         }
+
+        public int FindMin2(int[] nums)
+        {
+            return FindMin2(nums, 0, nums.Length - 1);
+        }
+
+        private int FindMin2(int[] nums, int left, int right)
+        {
+            while (left <= right)
+            {
+                while(left != right && nums[left] == nums[right])
+                {
+                    ++left;
+                }
+
+                if(nums[left] <= nums[right])
+                {
+                    return nums[left];
+                }
+
+                int mid = left + (right - left) / 2;
+
+                if (mid < nums.Length - 1 && nums[mid] > nums[mid + 1])
+                {
+                    return nums[mid + 1];
+                }
+
+                if (nums[mid] >= nums[left])
+                {
+                    left = mid + 1;
+                }
+                else
+                {
+                    right = mid;
+                }
+
+            }
+            return nums[0];
+        }
     }
 }
