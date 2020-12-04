@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30309.148
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode", "LeetCode\LeetCode.csproj", "{DEB4FA89-0DB8-4354-BD10-68E10726380C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode", "LeetCode\LeetCode.csproj", "{DEB4FA89-0DB8-4354-BD10-68E10726380C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.UnitTests", "LeetCode.UnitTests\LeetCode.UnitTests.csproj", "{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LeetCode.UnitTests", "LeetCode.UnitTests\LeetCode.UnitTests.csproj", "{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LeetCode.Benchmark", "LeetCode.Benchmark\LeetCode.Benchmark.csproj", "{377EC003-28D7-4C90-A6C7-CC4D1E49F80D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,15 @@ Global
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Debug|x64.ActiveCfg = Debug|x64
 		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Debug|x64.Build.0 = Debug|x64
-		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Release|x64.ActiveCfg = Debug|x64
-		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Release|x64.Build.0 = Debug|x64
+		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Release|x64.ActiveCfg = Release|x64
+		{DEB4FA89-0DB8-4354-BD10-68E10726380C}.Release|x64.Build.0 = Release|x64
 		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Debug|x64.ActiveCfg = Debug|x64
 		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Debug|x64.Build.0 = Debug|x64
-		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Release|x64.ActiveCfg = Debug|x64
+		{A2EE5571-0F23-4AED-B06E-AD0FEA2925A1}.Release|x64.ActiveCfg = Release|x64
+		{377EC003-28D7-4C90-A6C7-CC4D1E49F80D}.Debug|x64.ActiveCfg = Debug|x64
+		{377EC003-28D7-4C90-A6C7-CC4D1E49F80D}.Debug|x64.Build.0 = Debug|x64
+		{377EC003-28D7-4C90-A6C7-CC4D1E49F80D}.Release|x64.ActiveCfg = Release|x64
+		{377EC003-28D7-4C90-A6C7-CC4D1E49F80D}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

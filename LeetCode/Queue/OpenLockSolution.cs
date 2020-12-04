@@ -8,98 +8,57 @@ namespace LeetCode.Queue
     {
         public int OpenLock(string[] deadends, string target)
         {
-            var visited = new HashSet<int>();
+            var visited = new bool[10000];
 
             foreach(var node in deadends)
             {
                 if (node == "0000") return -1;
 
-                visited.Add(int.Parse(node));
+                visited[int.Parse(node)] = true;
             }
-            if (visited.Contains(int.Parse(target))) return -1;
+            if (visited[int.Parse(target)]) return -1;
             return Find(visited, int.Parse(target));
         }
 
-        private int Find(HashSet<int> visited, int target)
+        private int Find(bool[] visited, int target)
         {
             int path = 0;
-            var nodeBatch = new List<int>();
-            nodeBatch.Add(target);
-            while(nodeBatch.Count > 0)
+            var buffer = new Queue<int>();
+            buffer.Enqueue(target);
+            while(buffer.Count > 0)
             {
-                var nextBatch = new List<int>();
-
-                foreach(var node in nodeBatch)
+                int count = buffer.Count;
+                for(int i = 0; i < count; ++i)
                 {
+                    var node = buffer.Dequeue();
                     if (node == 0) return path;
 
-                    foreach(var next in GetNext(node))
-                    {
-                        if(false == visited.Contains(next))
-                        {
-                            nextBatch.Add(next);
-                        }
-                    }
-
-                    visited.Add(node);
+                    FillNext(node, visited, buffer);
                 }
-
-                nodeBatch = nextBatch;
                 ++path;
             }
             return -1;
         }
 
-        private static IEnumerable<int> GetNext(int node)
+        private static void FillNext(int node, bool[] visited, Queue<int> buffer)
         {
-            var arr = ToArray(node);
+            int left = node / 10;
+            int right = 0;
+            int current = node % 10;
+            int mult = 1;
 
-            for(int i = 0; i < arr.Length; ++i)
+            for(int i = 0; i < 4; ++i)
             {
-                int original = arr[i];
-                arr[i] = GetNextValue(original);
-                yield return ToValue(arr);
-                arr[i] = GetPreviousValue(original);
-                yield return ToValue(arr);
-                arr[i] = original;
+                int up = (left * 10 + (current + 1) % 10) * mult + right;
+                int down = (left * 10 + (current + 9) % 10) * mult + right;
+                if (false == visited[up]) { buffer.Enqueue(up); visited[up] = true; }
+                if (false == visited[down]) { buffer.Enqueue(down); visited[down] = true; }
+
+                right += current * mult;
+                mult *= 10;
+                current = left % 10;
+                left /= 10;
             }
-
-        }
-
-        private static int[] ToArray(int n)
-        {
-            var result = new int[4];
-            for(int i = 0; i < result.Length; ++i)
-            {
-                result[result.Length - 1 - i] = n % 10;
-                n = n / 10;
-            }
-            return result;
-        }
-
-        private static int ToValue(int[] arr)
-        {
-            int result = 0;
-            int m = 1000;
-            for(int i = 0; i < arr.Length; ++i)
-            {
-                result += arr[i] * m;
-                m = m / 10;
-            }
-
-            return result;
-        }
-
-        private static int GetNextValue(int ch)
-        {
-            if (ch == 9) return 0;
-            return ch + 1;
-        }
-
-        private static int GetPreviousValue(int ch)
-        {
-            if (ch == 0) return 9;
-            return ch - 1;
         }
     }
 }
